@@ -1,10 +1,9 @@
 interface Props {
-    name: string;
+  name: string;
 }
 
-function PersonalGreeting(props:Props) {
-    const{name} = props;
-    
+function PersonalGreeting(props: Props) {
+  const { name } = props;
   return <div>Hello, {name}!</div>;
 }
 

@@ -1,4 +1,5 @@
-function Goodbye(){
-    return <p>Goodbye,bye,bye</p>
+function Hello() {
+  return <p>Hello, React!!</p>;
 }
-export default Goodbye;
+
+export default Hello;

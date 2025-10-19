@@ -1,4 +1,5 @@
-function Goodbye(){
-    return <p>Goodbye,bye,bye</p>
+function Goodbye() {
+  return <div>Goodbye</div>;
 }
+
 export default Goodbye;
