@@ -2,6 +2,8 @@
 import AgeByName from "./components/AgeByName/AgeByName";
 import Counter from "./components/Counter/Counter";
 import EffectExample from "./components/EffectExample/EffectExample";
+import GenderReveal from "./components/GenderReveal/GenderReveal";
+
 import Goodbye from "./components/Goodbye/Goodbye";
 import Hello from "./components/Hello/Hello";
 import PersonalGreeting from "./components/PersonalGreeting/PersonalGreeting";
@@ -24,11 +26,11 @@ function App() {
   return (
     <>
       <p>Hello!</p>
+      <GenderReveal/> 
       <AgeByName/>
       <Counter />
       <RandomJoke/>
       <EffectExample />
-      
       <SpaceMissionForm/>
       <WeightCalculator />
       <Hello />
