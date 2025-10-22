@@ -1,54 +1,40 @@
-  import "./App.css";
-import AgeByName from "./components/AgeByName/AgeByName";
-import Counter from "./components/Counter/Counter";
-import EffectExample from "./components/EffectExample/EffectExample";
+  import { HashRouter,  Route, Routes } from "react-router-dom";
+import "./App.css";
 import GenderReveal from "./components/GenderReveal/GenderReveal";
-
-import Goodbye from "./components/Goodbye/Goodbye";
-import Hello from "./components/Hello/Hello";
-import PersonalGreeting from "./components/PersonalGreeting/PersonalGreeting";
-import ProductCard from "./components/ProductCard/ProductCard";
-import ProfileCard from "./components/ProfileCard/ProfileCard";
 import RandomJoke from "./components/RandomJoke/RandomJoke";
 import SpaceMissionForm from "./components/SpaceMissionForm/SpaceMissionForm";
 import Tool from "./components/Tool/Tool";
-import WeightCalculator from "./components/WeightCalculator/WeightCalculator";
+import Home from "./pages/Home/Home";
+import NotFound from "./pages/NotFound/NotFound";
+import MainLayout from "./layouts/MainLayout";
+import { ROUTES } from "./constants/routes";
+import Cohort_68 from "./pages/Cohort_68/Cohort_68";
+
+
 
  
 function App() {
-  const personalInfo = {
-    avatar:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDmgffzMaeQw7V9cKlwY9AUluTgDqHs0cBAA&s",
-
-    description: "Teacher",
-    name: "Alisher",
-  };
+   
   return (
     <>
-      <p>Hello!</p>
-      <GenderReveal/> 
-      <AgeByName/>
-      <Counter />
-      <RandomJoke/>
-      <EffectExample />
-      <SpaceMissionForm/>
-      <WeightCalculator />
-      <Hello />
-      <Hello />
-      <Goodbye />
-      {/* передаем пропс в компонент - как аргумент */}
-      <PersonalGreeting name="Alisher" />
-      <PersonalGreeting name="Fred" />
+      <HashRouter>
+      <Routes> 
+        <Route path="/" element={<MainLayout/>}>
+        <Route index element={<Home/>}/>
+        <Route path={ROUTES.GENDER_REVEAL}element={<GenderReveal/>}/>
+        <Route path={ROUTES.SPACE_MISSION}element={<SpaceMissionForm/>}/>
+        <Route path={ROUTES.RANDOM_JOKE}element={<RandomJoke/>}/>
+        <Route path={ROUTES.COHORT_68}element={<Cohort_68/>}/>
+        
+        <Route path="*"element={<NotFound/>}/>
+        </Route>
+      </Routes>
+      </HashRouter>
+
+      
+       
       <Tool />
 
-      <ProfileCard {...personalInfo} />
-      
-
-      <ProductCard
-        title="Opaeroo Paarungsspielzeug für Hunde"
-        image="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcT6dCWJhg_NWxlD6zuYn_a0CDMkebqD3IWtGcPHu6ZOhKs5KmI9eb9c6W41D6RlFy1PzLVs8pTI-JJDLThOPMEAbQ99Pg6ve69oNvUt2q6acOtAv5sXHBjIKvCMBLNNfxjN5sNTGIm3NQ&usqp=CAc"
-        price={86.99}
-      />
     </>
   );
 }
