@@ -37,7 +37,10 @@ export default function Header() {
         </NavLink>
         <NavLink to="/products" className={getClass}>
           Products
-        </NavLink> 
+        </NavLink>
+        <NavLink to="/users" className={getClass}>
+          Users
+        </NavLink>
 
         </nav>
         </header>

@@ -16,6 +16,9 @@ import Profile from "./pages/Profile/Profile";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import Country from "./components/Country/Country";
 import ProductsList from "./pages/ProductsList/ProductsList";
+import Users from "./pages/Users/Users";
+import UserPage from "./pages/UserPage/UserPage";
+import CatFacts from "./pages/CatFacts/CatFacts";
 
 
 
@@ -40,6 +43,10 @@ import ProductsList from "./pages/ProductsList/ProductsList";
             <Route path="/countries/:id/:slug" element={<Country />} />
             <Route path="/products" element={<ProductsList />} />
             <Route path="/products/:id" element={<ProductPage />} />
+             <Route path="/users" element={<Users />} />
+            <Route path="/users/:id" element={<UserPage />} />
+            <Route path="/cat-facts" element={<CatFacts />} />
+
           </Route>
         </Routes>
       </HashRouter>
