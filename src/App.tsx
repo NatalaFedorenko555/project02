@@ -3,56 +3,48 @@ import "./App.css";
 import GenderReveal from "./components/GenderReveal/GenderReveal";
 import RandomJoke from "./components/RandomJoke/RandomJoke";
 import SpaceMissionForm from "./components/SpaceMissionForm/SpaceMissionForm";
-import Tool from "./components/Tool/Tool";
 import Home from "./pages/Home/Home";
 import NotFound from "./pages/NotFound/NotFound";
 import MainLayout from "./layouts/MainLayout";
-import { ROUTES } from "./constants/routes";
+import { ROUTES as R} from "./constants/routes";
 import Cohort_68 from "./pages/Cohort_68/Cohort_68";
+import About from "./pages/About/About";
+import Contact from "./pages/Contact/Contact";
+import AccountLayout from "./layouts/AccountLayout";
+import Settings from "./pages/Settings/Settings";
+import Profile from "./pages/Profile/Profile";
+import ProductPage from "./pages/ProductPage/ProductPage";
+import Country from "./components/Country/Country";
+import ProductsList from "./pages/ProductsList/ProductsList";
 
 
 
- 
-function App() {
-   
+ function App() {
   return (
     <>
       <HashRouter>
-      <Routes> 
-        <Route path="/" element={<MainLayout/>}>
-        <Route index element={<Home/>}/>
-        <Route path={ROUTES.GENDER_REVEAL}element={<GenderReveal/>}/>
-        <Route path={ROUTES.SPACE_MISSION}element={<SpaceMissionForm/>}/>
-        <Route path={ROUTES.RANDOM_JOKE}element={<RandomJoke/>}/>
-        <Route path={ROUTES.COHORT_68}element={<Cohort_68/>}/>
-        
-        <Route path="*"element={<NotFound/>}/>
-        </Route>
-      </Routes>
+        <Routes>
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<Home />} />
+            <Route path={R.GENDER_REVEAL} element={<GenderReveal />} />
+            <Route path={R.SPACE_MISSION} element={<SpaceMissionForm />} />
+            <Route path={R.RANDOM_JOKE} element={<RandomJoke />} />
+            <Route path={R.COHORT_68} element={<Cohort_68 />} />
+            <Route path={R.ABOUT} element={<About />} />
+            <Route path={R.CONTACT} element={<Contact />} />
+             <Route path={R.ACCOUNT} element={<AccountLayout />}>
+              <Route path={R.SETTINGS} element={<Settings />} />
+              <Route path={R.PROFILE} element={<Profile />} />
+            </Route>
+            <Route path="*" element={<NotFound />} />
+            <Route path="/countries/:id/:slug" element={<Country />} />
+            <Route path="/products" element={<ProductsList />} />
+            <Route path="/products/:id" element={<ProductPage />} />
+          </Route>
+        </Routes>
       </HashRouter>
-
-      
-       
-      <Tool />
-
     </>
   );
 }
 
 export default App;
-
-// Создайте компонент Goodbye - который содерждит текст
-// Goodbye, bye bye!
-// Отобразите его на странице
-
-// Destructuring
-
-// const user = {
-//   name: "Bobby",
-//   age: 18,
-// };
-
-// // const name = user.name;
-// // const age = user.age;
-
-// const { name, age } = user;

@@ -18,6 +18,10 @@
   padding: 4px;
   color: black;
 }
+.activeLink{
+  padding: 4px;
+  color: red;
+}
 
 .link:hover {
   color: goldenrod;

@@ -2,17 +2,43 @@ import { NavLink } from "react-router-dom";
 import { ROUTES } from "../../constants/routes";
 import styles from './Header.module.css'
 
+const getClass=({ isActive }: { isActive: boolean }) =>
+  isActive ? styles.activeLink : styles.link;
+
 export default function Header() {
   return (
     <div>
     
       <header className={styles.header}>
         <nav>
-            <NavLink to={ROUTES.HOME} className={styles.link}>Home</NavLink>
-            <NavLink to={ROUTES.RANDOM_JOKE} className={styles.link}>Random Joke</NavLink>
-            <NavLink to={ROUTES.GENDER_REVEAL} className={styles.link}>Random Joke</NavLink>
-            <NavLink to={ROUTES.SPACE_MISSION} className={styles.link}>Random Joke</NavLink>
-            <NavLink to={ROUTES.COHORT_68} className={styles.link}>Cohort_68</NavLink>
+            <NavLink to={ROUTES.HOME} className={getClass}>
+          Home
+        </NavLink>
+        <NavLink to={ROUTES.RANDOM_JOKE} className={getClass}>
+          Random Joke
+        </NavLink>
+        <NavLink to={ROUTES.GENDER_REVEAL} className={getClass}>
+          Gender Reveal
+        </NavLink>
+        <NavLink to={ROUTES.SPACE_MISSION} className={getClass}>
+          Space Mission
+        </NavLink>
+        <NavLink to={ROUTES.COHORT_68} className={getClass}>
+          Cohort 68
+        </NavLink>
+        <NavLink to={ROUTES.ABOUT} className={getClass}>
+          About
+        </NavLink>
+        <NavLink to={ROUTES.CONTACT} className={getClass}>
+          Contact us
+        </NavLink>
+        <NavLink to={ROUTES.ACCOUNT} className={getClass}>
+          Account
+        </NavLink>
+        <NavLink to="/products" className={getClass}>
+          Products
+        </NavLink> 
+
         </nav>
         </header>
     </div>
