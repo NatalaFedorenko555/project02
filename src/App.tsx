@@ -19,6 +19,9 @@ import ProductsList from "./pages/ProductsList/ProductsList";
 import Users from "./pages/Users/Users";
 import UserPage from "./pages/UserPage/UserPage";
 import CatFacts from "./pages/CatFacts/CatFacts";
+import Parent from "./pages/Parent/Parent";
+import SigninPage from "./pages/SigninPage/SigninPage";
+
 
 
 
@@ -46,7 +49,8 @@ import CatFacts from "./pages/CatFacts/CatFacts";
              <Route path="/users" element={<Users />} />
             <Route path="/users/:id" element={<UserPage />} />
             <Route path="/cat-facts" element={<CatFacts />} />
-
+           < Route path="/parent" element={<Parent />} />
+           < Route path="/sign-in" element={<SigninPage/>} />
           </Route>
         </Routes>
       </HashRouter>

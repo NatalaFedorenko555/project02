@@ -1,17 +1,15 @@
 import { NavLink } from "react-router-dom";
 import { ROUTES } from "../../constants/routes";
-import styles from './Header.module.css'
+import styles from "./Header.module.css";
 
-const getClass=({ isActive }: { isActive: boolean }) =>
+const getClass = ({ isActive }: { isActive: boolean }) =>
   isActive ? styles.activeLink : styles.link;
 
 export default function Header() {
   return (
-    <div>
-    
-      <header className={styles.header}>
-        <nav>
-            <NavLink to={ROUTES.HOME} className={getClass}>
+    <header className={styles.header}>
+      <nav>
+        <NavLink to={ROUTES.HOME} className={getClass}>
           Home
         </NavLink>
         <NavLink to={ROUTES.RANDOM_JOKE} className={getClass}>
@@ -41,9 +39,13 @@ export default function Header() {
         <NavLink to="/users" className={getClass}>
           Users
         </NavLink>
-
-        </nav>
-        </header>
-    </div>
-  )
+        <NavLink to="/parent" className={getClass}>
+          Parent
+        </NavLink>
+        <NavLink to="/sign-in" className={getClass}>
+          Signin
+        </NavLink>
+      </nav>
+    </header>
+  );
 }

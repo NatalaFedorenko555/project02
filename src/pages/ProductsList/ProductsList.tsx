@@ -1,20 +1,14 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import type { Product } from "../../components/types/Product";
+import useProducts from "../../hooks/useProducts";
+
 
 
 export default function ProductsList() {
+  const{products,loading,message,} = useProducts ();
 
-const [products, setProduct] = useState<Product[]>([]);
 
-  async function fetchProducts() {
-    const res = await fetch("https://api.escuelajs.co/api/v1/products");
-    const arr = await res.json();
-    setProduct(arr);
-  }
-  useEffect(() => {
-    fetchProducts();
-  }, []);
+if(loading) return<p>Loading...</p>;
+if(message) return<p>{message}</p>;
 
   return (
     <div>
