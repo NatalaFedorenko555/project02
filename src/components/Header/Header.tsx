@@ -1,13 +1,16 @@
 import { NavLink } from "react-router-dom";
 import { ROUTES } from "../../constants/routes";
 import styles from "./Header.module.css";
+import { useAuth } from "../../hooks/useAuth";
 
 const getClass = ({ isActive }: { isActive: boolean }) =>
   isActive ? styles.activeLink : styles.link;
 
 export default function Header() {
+  const {user} = useAuth();
   return (
     <header className={styles.header}>
+      {user?.email}
       <nav>
         <NavLink to={ROUTES.HOME} className={getClass}>
           Home
@@ -44,6 +47,9 @@ export default function Header() {
         </NavLink>
         <NavLink to="/sign-in" className={getClass}>
           Signin
+        </NavLink>
+         <NavLink to="/create-category" className={getClass}>
+          Create category
         </NavLink>
       </nav>
     </header>

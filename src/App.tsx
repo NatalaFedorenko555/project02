@@ -21,6 +21,8 @@ import UserPage from "./pages/UserPage/UserPage";
 import CatFacts from "./pages/CatFacts/CatFacts";
 import Parent from "./pages/Parent/Parent";
 import SigninPage from "./pages/SigninPage/SigninPage";
+import { CreateCategory } from "./pages/CreateCategory/CreateCategory";
+import { AuthProvider } from "./providers/AuthProvider";
 
 
 
@@ -29,6 +31,7 @@ import SigninPage from "./pages/SigninPage/SigninPage";
   return (
     <>
       <HashRouter>
+        <AuthProvider>  
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
@@ -51,8 +54,10 @@ import SigninPage from "./pages/SigninPage/SigninPage";
             <Route path="/cat-facts" element={<CatFacts />} />
            < Route path="/parent" element={<Parent />} />
            < Route path="/sign-in" element={<SigninPage/>} />
+           < Route path="/create-category" element={<CreateCategory/>} />
           </Route>
         </Routes>
+        </AuthProvider>
       </HashRouter>
     </>
   );
