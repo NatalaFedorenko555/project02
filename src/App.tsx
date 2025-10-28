@@ -23,6 +23,7 @@ import Parent from "./pages/Parent/Parent";
 import SigninPage from "./pages/SigninPage/SigninPage";
 import { CreateCategory } from "./pages/CreateCategory/CreateCategory";
 import { AuthProvider } from "./providers/AuthProvider";
+import { CounterProvider } from "./providers/CounterProvider";
 
 
 
@@ -31,7 +32,8 @@ import { AuthProvider } from "./providers/AuthProvider";
   return (
     <>
       <HashRouter>
-        <AuthProvider>  
+        <AuthProvider> 
+        <CounterProvider>
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
@@ -55,8 +57,11 @@ import { AuthProvider } from "./providers/AuthProvider";
            < Route path="/parent" element={<Parent />} />
            < Route path="/sign-in" element={<SigninPage/>} />
            < Route path="/create-category" element={<CreateCategory/>} />
+           < Route path="/counter" element={<Country/>} />
+
           </Route>
         </Routes>
+        </CounterProvider> 
         </AuthProvider>
       </HashRouter>
     </>

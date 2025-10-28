@@ -2,15 +2,19 @@ import { NavLink } from "react-router-dom";
 import { ROUTES } from "../../constants/routes";
 import styles from "./Header.module.css";
 import { useAuth } from "../../hooks/useAuth";
+import { useCounterContext } from "../../hooks/useCounterContext";
 
 const getClass = ({ isActive }: { isActive: boolean }) =>
   isActive ? styles.activeLink : styles.link;
 
 export default function Header() {
   const {user} = useAuth();
+  const {count} = useCounterContext();
   return (
     <header className={styles.header}>
       {user?.email}
+      
+      Counter:{count}
       <nav>
         <NavLink to={ROUTES.HOME} className={getClass}>
           Home
