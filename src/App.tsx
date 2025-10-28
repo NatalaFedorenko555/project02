@@ -24,6 +24,7 @@ import SigninPage from "./pages/SigninPage/SigninPage";
 import { CreateCategory } from "./pages/CreateCategory/CreateCategory";
 import { AuthProvider } from "./providers/AuthProvider";
 import { CounterProvider } from "./providers/CounterProvider";
+import Counter from "./components/Counter/Counter";
 
 
 
@@ -57,7 +58,7 @@ import { CounterProvider } from "./providers/CounterProvider";
            < Route path="/parent" element={<Parent />} />
            < Route path="/sign-in" element={<SigninPage/>} />
            < Route path="/create-category" element={<CreateCategory/>} />
-           < Route path="/counter" element={<Country/>} />
+           < Route path="/counter" element={<Counter/>} />
 
           </Route>
         </Routes>
